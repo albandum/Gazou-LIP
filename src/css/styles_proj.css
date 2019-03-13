@@ -27,7 +27,7 @@ html, body {
   font-family: 'Open Sans Bold';
   color: rgb(55, 55, 55);
   overflow: hidden;
-  /* background-color: #E1FEFF; */
+   background-color: #00368e; 
 }
 
 body {
@@ -47,7 +47,7 @@ ul, li {
 #container_proj {
   height: 100%;
   width: 100%;
-  /* background-color: salmon; */
+   background-color: salmon; 
 }
 
 /* timer match*/
