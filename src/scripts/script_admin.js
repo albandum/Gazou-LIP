@@ -38,6 +38,7 @@ var videofin=0;
 $(function() {
   // init
   localStorage.setItem('VideoIntro', '0');
+  localStorage.setItem('VideoFin', '0');
   localStorage.setItem("EcranVote",'false');
   localStorage.setItem("EcranEntracte",'false');
   localStorage.setItem("EcranCaucus",'false');
@@ -465,6 +466,16 @@ $(function() {
     timerMatchPlaying = false;
   });
 
+  // MATCH STOP ==ok==
+  $('#btn_retour').click(function() {
+    localStorage.setItem('VideoIntro', '0');
+    localStorage.setItem('VideoFin', '0');
+    localStorage.setItem("EcranVote",'false');
+    localStorage.setItem("EcranEntracte",'false');
+    localStorage.setItem("EcranCaucus",'false');
+    localStorage.setItem("EcranMerci",'false');
+  });
+
   // THEME ==OK==
   $("#theme-impro").on("keyup", function() {
     var letexte = $(this).val();
@@ -524,7 +535,9 @@ $(function() {
 // FUNCTIONS
 
 // CAUCUS ==OK==
-function Caucus() {
+function Caucus(current_theme) {
+  console.log("themee");
+  console.log(current_theme);
   caucusTime--;
   $('#theme-impro').val(caucusTime);
   localStorage.setItem("PourAfficher", caucusTime);
@@ -534,7 +547,7 @@ function Caucus() {
   }
   if (caucusTime < 0) {
     clearInterval(caucus);
-    $("#theme-impro").val(themelaunched);
+    $("#theme-impro").val(theme);
     $('#btn_caucus').removeClass('active');
     // console.log('caucus is finished');
     localStorage.setItem("PourAfficher", themelaunched);

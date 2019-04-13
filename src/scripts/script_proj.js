@@ -51,7 +51,7 @@ $(function() {
     $("#proj_team_g").css("color", couleurG)
     $("#bloc-equipe-gauche .bloc-equipe .colorable").css("fill", couleurG);
     // thème
-    var affichage = localStorage.getItem("PourAfficher") || "Prochain thème d'impro";
+    var affichage = localStorage.getItem("PourAfficher") || "Bienvenue à ce match d'antologie !";
     $("#proj_theme, #proj_theme_mini, #container-caucus-txt").text(affichage);
     // console.log('affichage text value : '+affichage);
     CaucusColor(affichage);
