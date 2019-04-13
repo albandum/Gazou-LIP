@@ -240,6 +240,7 @@ td {
 }
 .penaliteactive{
   background-color:red !important;
+  fill: red;
 }
 /* equipe droite nom */
 
