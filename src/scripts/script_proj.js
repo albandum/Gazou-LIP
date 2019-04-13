@@ -11,23 +11,23 @@ $(function() {
   setInterval(function() {
 
     // ecran vote
-    var ecranvote=localStorage.getItem("EcranVote");
+    var ecranvote=localStorage.getItem("EcranVote") || false;
     EcranVote(ecranvote);
     // ecran entracte
-    var ecranentracte=localStorage.getItem("EcranEntracte");
+    var ecranentracte=localStorage.getItem("EcranEntracte") || false;
     EcranEntracte(ecranentracte);
     // ecran merci
-    var ecranmerci=localStorage.getItem("EcranMerci");
+    var ecranmerci=localStorage.getItem("EcranMerci") || false;
     EcranMerci(ecranmerci);
     // ecran caucus
-    var ecrancaucus=localStorage.getItem("EcranCaucus");
+    var ecrancaucus=localStorage.getItem("EcranCaucus") || false;
     EcranCaucus(ecrancaucus);
 
     // video videoIntro
-    var videointro=localStorage.getItem("VideoIntro");
+    var videointro=localStorage.getItem("VideoIntro") || false;
     VideoIntro(videointro);
     // video videoFin
-    var videofin=localStorage.getItem("VideoFin");
+    var videofin=localStorage.getItem("VideoFin") || false;
     VideoFin(videofin);
 
     // skins
@@ -37,10 +37,10 @@ $(function() {
     SkinSwap(skin,currentskin);
 
     // nom équipe G
-    var nomG = localStorage.getItem("nameTeamG");
+    var nomG = localStorage.getItem("nameTeamG") || "LIP";
     $("#proj_team_g").text(nomG);
     // nom équipe G
-    var nomD = localStorage.getItem("nameTeamD");
+    var nomD = localStorage.getItem("nameTeamD") || "EQUIPE EXTERNE";
     $("#proj_team_d").text(nomD);
     // couleur équipe G
     var couleurD = localStorage.getItem("colorTeamD");
@@ -51,33 +51,34 @@ $(function() {
     $("#proj_team_g").css("color", couleurG)
     $("#bloc-equipe-gauche .bloc-equipe .colorable").css("fill", couleurG);
     // thème
-    var affichage = localStorage.getItem("PourAfficher");
+    var affichage = localStorage.getItem("PourAfficher") || "Prochain thème d'impro";
     $("#proj_theme, #proj_theme_mini, #container-caucus-txt").text(affichage);
     // console.log('affichage text value : '+affichage);
     CaucusColor(affichage);
     // points g
-    var lesPointsG = localStorage.getItem("pointsG");
+    var lesPointsG = parseInt(localStorage.getItem("pointsG")) || 0;
     $("#proj_point_compteur_g").text(lesPointsG);
     // penalites g parseInt converti la string en int
-    var lesPenalitesG = localStorage.getItem("penalitesG");
+    var lesPenalitesG = localStorage.getItem("penalitesG") || 0;
     SetPenalitesG(lesPenalitesG);
     // points d
-    var lesPointsD = parseInt(localStorage.getItem("pointsD"));
+    var lesPointsD = parseInt(localStorage.getItem("pointsD") || 0);
     $("#proj_point_compteur_d").text(lesPointsD);
     // penalites d
-    var lesPenalitesD = localStorage.getItem("penalitesD");
+    var lesPenalitesD = localStorage.getItem("penalitesD") || 0;
     SetPenalitesD(lesPenalitesD);
     // durée match
-    var matchMin = localStorage.getItem("dureeMatchMin");
-    var matchSec = localStorage.getItem("dureeMatchSec");
+    var matchMin = localStorage.getItem("dureeMatchMin") || 59;
+    var matchSec = localStorage.getItem("dureeMatchSec") ||"00";
     $("#proj_duree_match, #proj_duree_match_mini").text(matchMin + ' : ' + matchSec);
     // durée impro
-    var dureeImproSec = localStorage.getItem("dureeImproSec");
-    var dureeImproMin = localStorage.getItem("dureeImproMin");
+  
+    var dureeImproMin = localStorage.getItem("dureeImproMin") || 5;
+    var dureeImproSec = localStorage.getItem("dureeImproSec") || 30;
     $("#proj_duree_impro, #proj_duree_impro_mini").text(dureeImproMin + ' : ' + dureeImproSec);
     HideImproTime(dureeImproMin, dureeImproSec); //if null (0:0) : don't show it
     // mode mini
-    var beMini = localStorage.getItem("IsMini");
+    var beMini = localStorage.getItem("IsMini") || false;
     $("#container_mini").css("visibility", beMini);
 
   }, 100);
@@ -199,24 +200,24 @@ function SetPenalitesG(lesPenalitesG) {
   // console.log("penalites g :" + lesPenalitesG)
   switch (lesPenalitesG) {
     case "0":
-      $('#bloc-equipe-gauche .bloc-equipe .penalite1').removeClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite2').removeClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite3').removeClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite1').removeClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite2').removeClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
       break;
     case "1":
-      $('#bloc-equipe-gauche .bloc-equipe .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite2').removeClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite3').removeClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite2').removeClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
       break;
     case "2":
-      $('#bloc-equipe-gauche .bloc-equipe .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite2').addClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite3').removeClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite2').addClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
       break;
     case "3":
-    $('#bloc-equipe-gauche .bloc-equipe .penalite1').addClass('penaliteactive');
-    $('#bloc-equipe-gauche .bloc-equipe .penalite2').addClass('penaliteactive');
-    $('#bloc-equipe-gauche .bloc-equipe .penalite3').addClass('penaliteactive');
+    $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
+    $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite2').addClass('penaliteactive');
+    $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite3').addClass('penaliteactive');
       break;
   }
 }
@@ -225,24 +226,24 @@ function SetPenalitesG(lesPenalitesG) {
 function SetPenalitesD(lesPenalitesD) {
   switch (lesPenalitesD) {
     case "0":
-      $('#bloc-equipe-droit .bloc-equipe .penalite1').removeClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite2').removeClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite3').removeClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite1').removeClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite2').removeClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
       break;
     case "1":
-      $('#bloc-equipe-droit .bloc-equipe .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite2').removeClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite3').removeClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite2').removeClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
       break;
     case "2":
-      $('#bloc-equipe-droit .bloc-equipe .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite2').addClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite3').removeClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite2').addClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
       break;
     case "3":
-      $('#bloc-equipe-droit .bloc-equipe .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite2').addClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite3').addClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite2').addClass('penaliteactive');
+      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite3').addClass('penaliteactive');
       break;
   }
 }

@@ -27,7 +27,7 @@ html, body {
   font-family: 'Open Sans Bold';
   color: white;
   overflow: hidden;
-   background-color: #00368e; 
+   background-color: #222; 
 }
 
 body {
@@ -126,7 +126,7 @@ ul, li {
 #proj_theme_bloc {
   position: absolute;
   width: 100%;
-  margin-top: 200px;
+  margin-top: 100px;
   /*height: 40vh;*/
   top: 10vh;
   padding: 0 10%;
@@ -177,7 +177,7 @@ td {
 #proj_team_g {
   position: absolute;
   width: 24.6%;
-  bottom: 17.5vw;
+  bottom: 21.5vw;
   padding-left: 3vw;
   /* text-align: right; */
   z-index: 5;
@@ -210,8 +210,36 @@ td {
   right: 0;
   transform: scale(-1, 1);
 } */
+
+#penalites_d {
+    position: absolute;
+    width: 24.6%;
+    right: 0;
+    bottom: 18.5vw;
+    padding-right: 3vw;
+    text-align: right;
+    z-index: 5;
+}
+
+#penalites_g {
+    position: absolute;
+    width: 24.6%;
+    bottom: 18.5vw;
+    padding-left: 3vw;
+    z-index: 5;
+}
+.penalite {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  display: inline-block;
+  margin: 5px;
+  border:1px solid white;
+  background-color: white;
+}
 .penaliteactive{
-  fill:red;
+  background-color:red !important;
 }
 /* equipe droite nom */
 
@@ -219,7 +247,7 @@ td {
   position: absolute;
   width: 24.6%;
   right:0;
-  bottom: 17.5vw;
+  bottom: 21.5vw;
   padding-right: 3vw;
   text-align: right;
   z-index: 5;
