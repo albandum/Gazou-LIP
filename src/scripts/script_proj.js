@@ -263,6 +263,6 @@ function CaucusColor(affichage) {
   } else if (affichage <= 5 && affichage >= 0) {
     $("#proj_theme, #container-caucus-txt").css('color', 'red');
   } else {
-    $("#proj_theme, #container-caucus-txt").css('color', 'rgb(55,55,55)');
+    $("#proj_theme, #container-caucus-txt").css('color', 'white');
   }
 }
