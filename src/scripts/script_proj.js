@@ -197,27 +197,27 @@ function SkinSwap(skin,currentskin){
 
 // penalites G
 function SetPenalitesG(lesPenalitesG) {
-  // console.log("penalites g :" + lesPenalitesG)
+  console.log("penalites g :" + lesPenalitesG)
   switch (lesPenalitesG) {
     case "0":
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite1').removeClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite2').removeClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
+      $('#penalites_g .penalite1').removeClass('penaliteactive');
+      $('#penalites_g .penalite2').removeClass('penaliteactive');
+      $('#penalites_g .penalite3').removeClass('penaliteactive');
       break;
     case "1":
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite2').removeClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
+      $('#penalites_g .penalite1').addClass('penaliteactive');
+      $('#penalites_g .penalite2').removeClass('penaliteactive');
+      $('#penalites_g .penalite3').removeClass('penaliteactive');
       break;
     case "2":
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite2').addClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
+      $('#penalites_g .penalite1').addClass('penaliteactive');
+      $('#penalites_g .penalite2').addClass('penaliteactive');
+      $('#penalites_g .penalite3').removeClass('penaliteactive');
       break;
     case "3":
-    $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
-    $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite2').addClass('penaliteactive');
-    $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite3').addClass('penaliteactive');
+      $('#penalites_g .penalite1').addClass('penaliteactive');
+      $('#penalites_g .penalite2').addClass('penaliteactive');
+      $('#penalites_g .penalite3').addClass('penaliteactive');
       break;
   }
 }
@@ -226,24 +226,24 @@ function SetPenalitesG(lesPenalitesG) {
 function SetPenalitesD(lesPenalitesD) {
   switch (lesPenalitesD) {
     case "0":
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite1').removeClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite2').removeClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
+      $('#penalites_d .penalite1').removeClass('penaliteactive');
+      $('#penalites_d .penalite2').removeClass('penaliteactive');
+      $('#penalites_d .penalite3').removeClass('penaliteactive');
       break;
     case "1":
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite2').removeClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
+      $('#penalites_d .penalite1').addClass('penaliteactive');
+      $('#penalites_d .penalite2').removeClass('penaliteactive');
+      $('#penalites_d .penalite3').removeClass('penaliteactive');
       break;
     case "2":
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite2').addClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
+      $('#penalites_d .penalite1').addClass('penaliteactive');
+      $('#penalites_d .penalite2').addClass('penaliteactive');
+      $('#penalites_d .penalite3').removeClass('penaliteactive');
       break;
     case "3":
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite2').addClass('penaliteactive');
-      $('#bloc-equipe-droit .bloc-equipe .penalite .penalite3').addClass('penaliteactive');
+      $('#penalites_d .penalite1').addClass('penaliteactive');
+      $('#penalites_d .penalite2').addClass('penaliteactive');
+      $('#penalites_d .penalite3').addClass('penaliteactive');
       break;
   }
 }

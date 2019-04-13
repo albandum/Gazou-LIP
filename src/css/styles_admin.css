@@ -136,7 +136,8 @@ ol, li {
   color:rgb(0,180,100);
 }
 .penalites.active {
-  color: red;
+  color: white;
+  background-color: red;
 }
 
 input:checked+.slider {

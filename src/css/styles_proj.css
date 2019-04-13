@@ -230,8 +230,8 @@ td {
 }
 .penalite {
   position: relative;
-  width: 16px;
-  height: 16px;
+  width: 25px;
+  height: 25px;
   border-radius: 50px;
   display: inline-block;
   margin: 5px;
