@@ -175,10 +175,19 @@ td {
 } */
 
 /* equipe gauche nom */
-#proj_team_g, #logo_team_g {
+#proj_team_g {
   position: absolute;
   width: 24.6%;
   bottom: 21.5vw;
+  padding-left: 3vw;
+  /* text-align: right; */
+  z-index: 5;
+}
+
+#logo_team_g {
+  position: absolute;
+  width: 24.6%;
+  bottom: 25.5vw;
   padding-left: 3vw;
   /* text-align: right; */
   z-index: 5;
@@ -258,6 +267,21 @@ td {
   padding-right: 3vw;
   text-align: right;
   z-index: 5;
+}
+
+#logo_team_d {
+  position: absolute;
+  width: 24.6%;
+  right:0;
+  bottom: 25.5vw;
+  padding-right: 3vw;
+  text-align: right;
+  z-index: 5;
+}
+
+#logo_team_d img {
+  max-width: 200px;
+  max-height: 150px;
 }
 
 /* equipe droite points */
