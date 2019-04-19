@@ -209,9 +209,9 @@ function SetPenalitesG(lesPenalitesG) {
       $('#penalites_g .penalite2').removeClass('penaliteactive');
       $('#penalites_g .penalite3').removeClass('penaliteactive');
 
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite1').addClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite2').removeClass('penaliteactive');
-      $('#bloc-equipe-gauche .bloc-equipe .penalite .penalite3').removeClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite1').addClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite2').removeClass('penaliteactive');
+      $('#bloc-equipe-gauche .bloc-equipe .penalite3').removeClass('penaliteactive');
       break;
     case "2":
       $('#penalites_g .penalite1').addClass('penaliteactive');
