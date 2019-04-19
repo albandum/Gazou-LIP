@@ -256,7 +256,7 @@ $(function() {
     //console.log('caucus starting');
     // on enregistre le thème en cours s'il y en a un
     if($("#theme-impro").val().length !== 0) {
-	     theme[currentTheme] = $("#theme").val();
+	     theme[currentTheme] = $("#theme-impro").val();
     }
     $(this).addClass('active');
     $(this).siblings('.btn-long').removeClass('active');
