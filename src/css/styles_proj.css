@@ -166,6 +166,7 @@ td {
   bottom: -5px;
   left: 0;
 }
+
 /* #proj_fond_bloc_g, #proj_bloc_g_p1, #proj_bloc_g_p2, #proj_bloc_g_p3 {
   position: absolute;
   width: 32vw;
@@ -174,13 +175,18 @@ td {
 } */
 
 /* equipe gauche nom */
-#proj_team_g {
+#proj_team_g, #logo_team_g {
   position: absolute;
   width: 24.6%;
   bottom: 21.5vw;
   padding-left: 3vw;
   /* text-align: right; */
   z-index: 5;
+}
+
+#logo_team_g img {
+  max-width: 200px;
+  max-height: 150px;
 }
 
 /* equipe gauche points */
