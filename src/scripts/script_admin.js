@@ -537,7 +537,7 @@ $(function() {
 // CAUCUS ==OK==
 function Caucus(current_theme) {
   console.log("themee");
-  console.log(current_theme);
+  console.log(theme);
   caucusTime--;
   $('#theme-impro').val(caucusTime);
   localStorage.setItem("PourAfficher", caucusTime);
@@ -550,7 +550,7 @@ function Caucus(current_theme) {
     $("#theme-impro").val(theme);
     $('#btn_caucus').removeClass('active');
     // console.log('caucus is finished');
-    localStorage.setItem("PourAfficher", themelaunched);
+    localStorage.setItem("PourAfficher", theme);
     localStorage.setItem("EcranCaucus", 'false');
     $('#theme-impro').css('color', 'white');
     caucusTime=20;
