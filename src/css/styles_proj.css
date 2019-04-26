@@ -53,6 +53,7 @@ ul, li {
 /* timer match*/
 
 #proj_duree_match_container {
+  padding-top:7vw;
   margin: auto;
   width: 15vw;
   height: inherit;
@@ -128,7 +129,7 @@ ul, li {
   width: 100%;
   margin-top: 100px;
   /*height: 40vh;*/
-  top: 10vh;
+  top: 12vh;
   padding: 0 10%;
 }
 
