@@ -18,6 +18,7 @@ var timerMatchPlaying = false;
 
 var caucus;
 var caucusTime = 20;
+var caucusInProgress = false;
 
 var theme = [];
 var currentTheme=0;
@@ -253,14 +254,18 @@ $(function() {
 
   // CAUCUS ==OK==
   $('#btn_caucus').click(function() {
-    //console.log('caucus starting');
-    // on enregistre le thème en cours s'il y en a un
-    if($("#theme-impro").val().length !== 0) {
-	     theme[currentTheme] = $("#theme-impro").val();
+    if (!caucusInProgress){
+      //console.log('caucus starting');
+      // on enregistre le thème en cours s'il y en a un
+      if($("#theme-impro").val().length !== 0) {
+  	     theme[currentTheme] = $("#theme-impro").val();
+      }
+      $(this).addClass('active');
+      $(this).siblings('.btn-long').removeClass('active');
+      
+      caucusInProgress = true;
+      caucus = window.setInterval(Caucus, 1000);
     }
-    $(this).addClass('active');
-    $(this).siblings('.btn-long').removeClass('active');
-    caucus = window.setInterval(Caucus, 1000);
   });
 
   // VOTE ==OK==
@@ -476,6 +481,7 @@ $(function() {
     localStorage.setItem("EcranMerci",'false');
 
     clearInterval(caucus);
+    caucusInProgress = false;
     $("#theme-impro").val(theme);
     $('#btn_caucus').removeClass('active');
     // console.log('caucus is finished');
@@ -545,10 +551,8 @@ $(function() {
 
 // CAUCUS ==OK==
 function Caucus(current_theme) {
-  console.log("themee");
-  console.log(theme);
   caucusTime--;
-  $('#theme-impro').val(caucusTime);
+  $('#theme-impro').val("CAUCUS\n"+caucusTime);
   localStorage.setItem("PourAfficher", caucusTime);
   localStorage.setItem("EcranCaucus", 'true');
   if (caucusTime < 10) {
@@ -556,6 +560,7 @@ function Caucus(current_theme) {
   }
   if (caucusTime < 0) {
     clearInterval(caucus);
+    caucusInProgress = false;
     $("#theme-impro").val(theme);
     $('#btn_caucus').removeClass('active');
     // console.log('caucus is finished');

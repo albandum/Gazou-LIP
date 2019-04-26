@@ -118,10 +118,10 @@ function EcranMerci(ecranmerci){
 // ecran caucus
 function EcranCaucus(ecrancaucus){
   if(ecrancaucus=="true"){
-    $('#container-caucus, #container-caucus-txt').removeClass('ecranhidden');
+    $('#container-caucus, #container-caucus-txt, #container-caucus-title').removeClass('ecranhidden');
   }
   else{
-    $('#container-caucus, #container-caucus-txt').addClass('ecranhidden');
+    $('#container-caucus, #container-caucus-txt, #container-caucus-title').addClass('ecranhidden');
   }
 }
 
