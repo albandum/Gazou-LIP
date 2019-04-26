@@ -474,6 +474,15 @@ $(function() {
     localStorage.setItem("EcranEntracte",'false');
     localStorage.setItem("EcranCaucus",'false');
     localStorage.setItem("EcranMerci",'false');
+
+    clearInterval(caucus);
+    $("#theme-impro").val(theme);
+    $('#btn_caucus').removeClass('active');
+    // console.log('caucus is finished');
+    localStorage.setItem("PourAfficher", theme);
+    localStorage.setItem("EcranCaucus", 'false');
+    $('#theme-impro').css('color', 'white');
+    caucusTime=20;
   });
 
   // THEME ==OK==
